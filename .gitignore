@@ -1,0 +1,55 @@
+# Byte-compiled / 运行时产物
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 分发 / 打包
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+sdist/
+wheels/
+*.egg-info/
+*.egg
+.installed.cfg
+MANIFEST
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# 测试 / 覆盖率
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.cache
+
+# 类型检查 / lint
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# NanoQuery 数据产物（示例数据与列存文件不入库）
+*.nq
+!examples/**/*.nq
+data/
+out/

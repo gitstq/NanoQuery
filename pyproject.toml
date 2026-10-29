@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nanoquery"
+version = "1.0.0"
+description = "零依赖嵌入式列式分析引擎：直接用 SQL 查询本地 CSV / JSONL / 日志文件"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "gitstq" }]
+keywords = [
+    "sql",
+    "columnar",
+    "olap",
+    "csv",
+    "jsonl",
+    "cli",
+    "embedded",
+    "zero-dependency",
+    "data-analysis",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database :: Engines/Servers",
+    "Topic :: Utilities",
+]
+# 核心卖点：运行时零第三方依赖，仅标准库。
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "build>=0.10",
+    "twine>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/gitstq/NanoQuery"
+Repository = "https://github.com/gitstq/NanoQuery"
+Issues = "https://github.com/gitstq/NanoQuery/issues"
+
+[project.scripts]
+nanoquery = "nanoquery.cli:main"
+
+[tool.setuptools]
+packages = ["nanoquery"]
+
+[tool.setuptools.package-data]
+nanoquery = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"
